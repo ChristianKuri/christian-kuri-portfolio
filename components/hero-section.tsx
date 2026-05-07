@@ -1,6 +1,7 @@
-import { ArrowRight, Cpu, Download, Sparkles, Terminal, Workflow } from "lucide-react";
+import { ArrowRight, Download, Sparkles } from "lucide-react";
 
 import { FadeIn } from "@/components/fade-in";
+import { HeroChatbotDemo } from "@/components/hero-chatbot-demo";
 import { siteConfig } from "@/lib/site-data";
 
 export function HeroSection() {
@@ -57,46 +58,7 @@ export function HeroSection() {
         <FadeIn delay={0.12} className="relative">
           <div className="absolute -inset-4 rounded-[2rem] bg-cyan-300/10 blur-3xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 shadow-2xl backdrop-blur">
-            <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-5">
-              <div className="mb-5 flex items-center gap-2">
-                <span className="size-3 rounded-full bg-red-400" />
-                <span className="size-3 rounded-full bg-yellow-300" />
-                <span className="size-3 rounded-full bg-emerald-400" />
-                <span className="ml-3 text-xs text-slate-500">systems.ts</span>
-              </div>
-              <div className="space-y-4 font-mono text-sm text-slate-300">
-                <p>
-                  <span className="text-purple-300">const</span>{" "}
-                  <span className="text-cyan-200">focus</span> = [
-                </p>
-                <p className="pl-5 text-slate-100">{`"AI workflows",`}</p>
-                <p className="pl-5 text-slate-100">{`"automation platforms",`}</p>
-                <p className="pl-5 text-slate-100">{`"event-driven systems",`}</p>
-                <p className="pl-5 text-slate-100">{`"developer productivity"`}</p>
-                <p>];</p>
-              </div>
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                {[
-                  { label: "Backend", icon: Cpu },
-                  { label: "AI Agents", icon: Sparkles },
-                  { label: "Automation", icon: Workflow },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                  >
-                    <item.icon className="mb-3 size-5 text-cyan-200" />
-                    <p className="text-sm font-medium text-white">{item.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="mt-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <Terminal className="size-5 text-emerald-300" />
-              <p className="text-sm text-slate-300">
-                Shipping production systems with practical AI leverage.
-              </p>
-            </div>
+            <HeroChatbotDemo />
           </div>
         </FadeIn>
       </div>
