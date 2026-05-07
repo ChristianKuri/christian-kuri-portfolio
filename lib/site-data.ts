@@ -1,15 +1,15 @@
 export const siteConfig = {
   name: "Christian Kuri",
-  title: "Senior Full Stack Engineer",
+  title: "Senior Full Stack Engineer — AI Integrations & Automation",
   description:
-    "Senior Full Stack Engineer building scalable web applications, backend systems, AI-powered workflows, and automation tools.",
+    "Senior Full Stack Engineer with 10 years of experience building scalable web applications, backend systems, and AI-powered automation workflows.",
   url: "https://christiankuri.dev",
-  email: "hello@christiankuri.dev",
+  email: "christian.kuri.martinez@gmail.com",
   links: {
-    github: "https://github.com/your-username",
-    linkedin: "https://www.linkedin.com/in/your-profile",
-    resume: "/resume.pdf",
-    email: "mailto:hello@christiankuri.dev",
+    github: "https://github.com/ChristianKuri",
+    linkedin: "https://www.linkedin.com/in/christian-kuri",
+    resume: "/Christian%20Kuri%20Resume%20-%20Senior%20Full%20Stack%20Engineer%20-%20AI%20Engineer.pdf",
+    email: "mailto:christian.kuri.martinez@gmail.com",
   },
 };
 
@@ -25,7 +25,16 @@ export const navItems = [
 export const skillGroups = [
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js", "Astro"],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vue.js",
+      "Astro",
+      "Material UI",
+      "Bootstrap",
+    ],
   },
   {
     title: "Backend",
@@ -34,9 +43,13 @@ export const skillGroups = [
       "Express",
       "NestJS",
       "Java",
+      "Kafka",
       "REST APIs",
       "GraphQL",
       "Microservices",
+      "Event-Driven Architecture",
+      "Queue-Based Systems",
+      "API Integrations",
     ],
   },
   {
@@ -50,7 +63,13 @@ export const skillGroups = [
       "ChatGPT",
       "n8n",
       "AI Agents",
+      "Agentic Workflows",
       "Prompt Orchestration",
+      "Structured Outputs",
+      "Function Calling",
+      "Tool Calling",
+      "Context Management",
+      "LLM Output Validation",
       "Workflow Automation",
     ],
   },
@@ -81,14 +100,18 @@ export const skillGroups = [
       "Smart Contract Auditing",
     ],
   },
+  {
+    title: "Testing",
+    skills: ["Jest", "Cypress", "Playwright", "React Testing Library", "Vitest"],
+  },
 ];
 
 export const projects = [
   {
     title: "AI Research-to-Blog Generation Pipeline",
     description:
-      "Multi-stage AI workflow using Vercel AI SDK that researches topics, filters sources, summarizes findings, creates structured outlines, and generates full blog posts.",
-    tags: ["Vercel AI SDK", "LLMs", "TypeScript", "Automation"],
+      "Multi-stage AI content system using Vercel AI SDK with research, source analysis, summarization, outline generation, structured context passing, validation, and final drafting stages.",
+    tags: ["Vercel AI SDK", "LLMs", "Structured Outputs", "Automation"],
   },
   {
     title: "n8n AI Automation Workflows",
@@ -99,14 +122,20 @@ export const projects = [
   {
     title: "Scalable Backend Systems",
     description:
-      "Production backend systems supporting high traffic, event-driven flows, database optimization, and zero-downtime migrations.",
-    tags: ["Node.js", "Kafka", "PostgreSQL", "AWS", "Microservices"],
+      "Production backend systems supporting 100,000+ daily active users, Kafka-driven change data capture, database optimization, and zero-downtime endpoint migrations.",
+    tags: ["Node.js", "Java", "Kafka", "PostgreSQL", "Microservices"],
   },
   {
     title: "Web3 / Smart Contract Work",
     description:
-      "Experience with Solidity, smart contract auditing, EVM tooling, and dApp integrations.",
+      "Experience with Solidity, smart contract auditing, EVM tooling, and dApp integrations, supported by practical backend and API integration experience.",
     tags: ["Solidity", "Hardhat", "Ethers.js", "Web3"],
+  },
+  {
+    title: "Legacy Platform Modernization",
+    description:
+      "Migration and rewrite work across legacy Node.js, TypeScript, Laravel, PHP, and e-commerce platforms to improve maintainability, speed, security, and release safety.",
+    tags: ["TypeScript", "Node.js", "Java", "Laravel", "Feature Flags"],
   },
 ];
 
@@ -114,9 +143,43 @@ export const experienceHighlights = [
   "10 years of software engineering experience",
   "Built systems supporting 100,000+ daily active users",
   "Kafka-based event flows processing 500,000+ events daily",
-  "Database restructuring that improved query performance up to 10x",
-  "Migrated 40+ legacy endpoints with zero-downtime rollouts",
+  "Database restructuring reduced a primary table by 25% and improved query performance up to 10x",
+  "Migrated 40+ complex Node.js/TypeScript endpoints to Java with zero-downtime rollouts",
+  "Refactored migrated APIs to improve response times by up to 5x",
+  "Built admin panels that reduced internal manual data entry by over 50%",
+  "Maintained internal REST APIs with 99.9% reliability",
   "AI-assisted development workflow increased productivity up to 3x",
+];
+
+export const roles = [
+  {
+    company: "BuildOps",
+    role: "Senior Full Stack Software Engineer",
+    period: "May 2024 - April 2026",
+    summary:
+      "Built high-scale TypeScript, Node.js, and Java systems with Kafka event flows, database restructuring, legacy endpoint migrations, feature flags, and AI-assisted engineering workflows.",
+  },
+  {
+    company: "Knight Interactive",
+    role: "Senior Full Stack Software Engineer",
+    period: "July 2018 - August 2023",
+    summary:
+      "Led full lifecycle delivery for websites, web apps, admin panels, REST APIs, third-party integrations, Laravel-to-Node migrations, and e-commerce platform rewrites.",
+  },
+  {
+    company: "Bonk Studios",
+    role: "Mid-level Full Stack Software Engineer",
+    period: "February 2017 - July 2018",
+    summary:
+      "Maintained and optimized production Laravel and Bootstrap applications, improving performance and reliability for thousands of monthly visitors.",
+  },
+  {
+    company: "Freelance",
+    role: "Full Stack Software Engineer",
+    period: "January 2015 - February 2017",
+    summary:
+      "Built and maintained SaaS and CRM applications for clients using PHP and Laravel to streamline business processes.",
+  },
 ];
 
 export const interests = [

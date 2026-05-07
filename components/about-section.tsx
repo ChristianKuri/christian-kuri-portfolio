@@ -6,12 +6,14 @@ import { SectionHeading } from "@/components/section-heading";
 const aboutCards = [
   {
     title: "Production-Minded",
-    description: "Focused on durable systems, clean APIs, reliable releases, and clear tradeoffs.",
+    description:
+      "Focused on durable systems, reliable APIs, database performance, and zero-downtime releases.",
     icon: ShieldCheck,
   },
   {
     title: "AI-Enabled",
-    description: "Uses AI tools to accelerate research, development, orchestration, and automation.",
+    description:
+      "Uses Cursor, Claude, Codex, ChatGPT, Vercel AI SDK, and n8n to ship faster with strong engineering ownership.",
     icon: Rocket,
   },
   {
@@ -27,21 +29,22 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="About"
-          title="Senior engineering across product, platform, and automation."
-          description="I bring 10 years of experience building production systems, APIs, internal tools, scalable platforms, and AI-powered workflows."
+          title="Senior engineering across product, platform, AI, and automation."
+          description="I bring 10 years of experience building scalable applications, backend systems, internal tools, event-driven platforms, and AI-powered workflows."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <FadeIn className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 backdrop-blur md:p-10">
             <p className="text-lg leading-9 text-slate-200">
-              I am a Senior Full Stack Engineer who enjoys building practical software that helps
-              teams move faster: web applications, backend services, automation systems, data-heavy
-              workflows, and AI-assisted tools.
+              I am a Senior Full Stack Engineer specializing in practical AI integrations, agentic
+              workflows, API design, system migrations, event-driven architecture, microservices,
+              and production-grade delivery.
             </p>
             <p className="mt-6 text-lg leading-9 text-slate-300">
-              My work sits at the intersection of TypeScript, Node.js, React, distributed backend
-              systems, AI integrations, and developer productivity. I care about readable code,
-              operational reliability, and product decisions that make engineering effort count.
+              My background spans TypeScript, Node.js, React, Java, cloud infrastructure, Kafka,
+              high-traffic systems, database optimization, and developer productivity. I use AI as a
+              multiplier while keeping correctness, testing, security, and engineering judgment
+              firmly owned by the developer.
             </p>
           </FadeIn>
 

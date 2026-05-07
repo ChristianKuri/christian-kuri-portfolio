@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Christian Kuri | Senior Full Stack Engineer",
+    default: `${siteConfig.name} | ${siteConfig.title}`,
     template: "%s | Christian Kuri",
   },
   description: siteConfig.description,
@@ -29,14 +29,18 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "AI integrations",
+    "AI agents",
+    "Vercel AI SDK",
+    "n8n",
     "automation workflows",
+    "Kafka",
     "backend systems",
     "Web3",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   openGraph: {
-    title: "Christian Kuri | Senior Full Stack Engineer",
+    title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: "Christian Kuri",
@@ -45,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Christian Kuri | Senior Full Stack Engineer",
+    title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
   },
   robots: {

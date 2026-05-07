@@ -20,14 +20,14 @@ export function HeroSection() {
             Christian Kuri
           </h1>
           <p className="mt-5 text-2xl font-medium text-cyan-100 md:text-3xl">
-            Senior Full Stack Engineer
+            Senior Full Stack Engineer — AI Integrations & Automation
           </p>
           <p className="mt-6 max-w-3xl text-xl leading-8 text-slate-200 md:text-2xl md:leading-10">
-            AI Integrations, Automation, Scalable Backend Systems, TypeScript, Node.js, React
+            TypeScript, Node.js, React, Java, Scalable Backend Systems, AI Workflows
           </p>
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-            I build scalable web applications, backend systems, AI-powered workflows, and
-            automation tools.
+            I build scalable web applications, backend systems, AI-powered automation workflows,
+            and developer productivity systems without sacrificing reliability.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -71,8 +71,8 @@ export function HeroSection() {
                 </p>
                 <p className="pl-5 text-slate-100">{`"AI workflows",`}</p>
                 <p className="pl-5 text-slate-100">{`"automation platforms",`}</p>
-                <p className="pl-5 text-slate-100">{`"backend architecture",`}</p>
-                <p className="pl-5 text-slate-100">{`"Web3 infrastructure"`}</p>
+                <p className="pl-5 text-slate-100">{`"event-driven systems",`}</p>
+                <p className="pl-5 text-slate-100">{`"developer productivity"`}</p>
                 <p>];</p>
               </div>
               <div className="mt-8 grid gap-3 sm:grid-cols-3">

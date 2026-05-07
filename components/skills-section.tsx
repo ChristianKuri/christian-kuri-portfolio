@@ -1,4 +1,4 @@
-import { Braces, BrainCircuit, Cloud, Code2, Database, Hexagon } from "lucide-react";
+import { Braces, BrainCircuit, Bug, Cloud, Code2, Database, Hexagon } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import { FadeIn } from "@/components/fade-in";
@@ -12,6 +12,7 @@ const skillIcons: Record<string, LucideIcon> = {
   Databases: Database,
   "Cloud / DevOps": Cloud,
   "Web3 / Blockchain": Hexagon,
+  Testing: Bug,
 };
 
 export function SkillsSection() {
