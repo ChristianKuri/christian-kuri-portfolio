@@ -109,30 +109,35 @@ export const skillGroups = [
 export const projects = [
   {
     title: "AI Research-to-Blog Generation Pipeline",
+    category: "AI Pipeline",
     description:
       "Multi-stage AI content system using Vercel AI SDK with research, source analysis, summarization, outline generation, structured context passing, validation, and final drafting stages.",
     tags: ["Vercel AI SDK", "LLMs", "Structured Outputs", "Automation"],
   },
   {
     title: "n8n AI Automation Workflows",
+    category: "Automation",
     description:
       "Automation workflows connecting APIs and AI-assisted steps to reduce manual work and orchestrate content or business processes.",
     tags: ["n8n", "AI Automation", "APIs", "Workflow Automation"],
   },
   {
     title: "Scalable Backend Systems",
+    category: "Backend",
     description:
-      "Production backend systems supporting 100,000+ daily active users, Kafka-driven change data capture, database optimization, and zero-downtime endpoint migrations.",
+      "Production backend systems supporting Kafka-driven change data capture, database optimization, and zero-downtime endpoint migrations across TypeScript, Node.js, and Java.",
     tags: ["Node.js", "Java", "Kafka", "PostgreSQL", "Microservices"],
   },
   {
     title: "Web3 / Smart Contract Work",
+    category: "Web3",
     description:
       "Experience with Solidity, smart contract auditing, EVM tooling, and dApp integrations, supported by practical backend and API integration experience.",
     tags: ["Solidity", "Hardhat", "Ethers.js", "Web3"],
   },
   {
     title: "Legacy Platform Modernization",
+    category: "Migration",
     description:
       "Migration and rewrite work across legacy Node.js, TypeScript, Laravel, PHP, and e-commerce platforms to improve maintainability, speed, security, and release safety.",
     tags: ["TypeScript", "Node.js", "Java", "Laravel", "Feature Flags"],
