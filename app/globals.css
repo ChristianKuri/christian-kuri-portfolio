@@ -46,3 +46,40 @@ a {
 section {
   scroll-margin-top: 5rem;
 }
+
+.tech-logo-orbit {
+  transform: translate3d(
+    calc(var(--logo-parallax-x) * var(--logo-depth)),
+    calc(var(--logo-parallax-y) * var(--logo-depth)),
+    0
+  );
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tech-logo-float {
+  animation: tech-logo-float 18s ease-in-out infinite;
+}
+
+@keyframes tech-logo-float {
+  0%,
+  100% {
+    opacity: 0.34;
+    transform: translate3d(0, 0, 0) rotate(-2deg) scale(0.98);
+  }
+
+  50% {
+    opacity: 0.78;
+    transform: translate3d(14px, -18px, 0) rotate(2deg) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-logo-orbit {
+    transform: none;
+    transition: none;
+  }
+
+  .tech-logo-float {
+    animation: none;
+  }
+}

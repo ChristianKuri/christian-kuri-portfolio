@@ -1,6 +1,7 @@
 import { ArrowRight, Download, Sparkles } from "lucide-react";
 
 import { FadeIn } from "@/components/fade-in";
+import { FloatingTechLogos } from "@/components/floating-tech-logos";
 import { HeroChatbotDemo } from "@/components/hero-chatbot-demo";
 import { siteConfig } from "@/lib/site-data";
 
@@ -11,6 +12,7 @@ export function HeroSection() {
       className="relative isolate overflow-hidden px-5 py-24 sm:px-6 md:py-32 lg:px-8"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.26),transparent_32%),radial-gradient(circle_at_75%_25%,rgba(168,85,247,0.2),transparent_30%),radial-gradient(circle_at_50%_95%,rgba(34,211,238,0.14),transparent_32%)]" />
+      <FloatingTechLogos />
       <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
         <FadeIn>
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-medium text-cyan-100 shadow-[0_0_40px_rgba(34,211,238,0.12)]">
