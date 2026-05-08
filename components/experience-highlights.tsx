@@ -1,8 +1,27 @@
-import { CalendarDays, CheckCircle2, ChevronDown, Timer, Wrench } from "lucide-react";
+import { Fragment } from "react";
 
 import { FadeIn } from "@/components/fade-in";
 import { SectionHeading } from "@/components/section-heading";
 import { experienceHighlights, roles } from "@/lib/site-data";
+import { ToolGlyph } from "@/lib/tool-icons";
+
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return (
+            <strong key={index} className="font-semibold text-white">
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+        return <Fragment key={index}>{part}</Fragment>;
+      })}
+    </>
+  );
+}
 
 export function ExperienceHighlights() {
   return (
@@ -10,101 +29,127 @@ export function ExperienceHighlights() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Experience"
-          title="Production experience with measurable engineering outcomes."
-          description="Practical results across high-scale systems, migrations, performance, event flows, AI-assisted delivery, and full lifecycle product engineering."
+          title="A decade of shipping production software."
+          description="Roles, responsibilities, and the systems I built — across product engineering, backend platforms, AI-assisted delivery, and legacy modernization."
         />
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {experienceHighlights.map((highlight, index) => (
+        {/* Timeline */}
+        <div className="relative">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-3 top-3 bottom-16 w-px bg-gradient-to-b from-cyan-300/70 via-purple-300/30 to-transparent"
+          />
+
+          {roles.map((role, index) => (
             <FadeIn
-              key={highlight}
+              key={`${role.company}-${role.years}`}
               delay={index * 0.06}
-              className="rounded-3xl border border-white/10 bg-white/[0.045] p-6"
+              className={`relative pl-10 sm:pl-12 ${
+                index === roles.length - 1 ? "" : "pb-24 md:pb-28"
+              }`}
             >
-              <CheckCircle2 className="mb-5 size-6 text-emerald-300" />
-              <p className="text-lg font-medium leading-8 text-slate-100">{highlight}</p>
+              {/* Rail node + ping */}
+              <span
+                aria-hidden="true"
+                className="absolute left-3 top-2 size-3.5 -translate-x-1/2 rounded-full border-2 border-cyan-300/80 bg-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.5)]"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute left-3 top-2 size-3.5 -translate-x-1/2 animate-ping rounded-full bg-cyan-300/40 [animation-duration:3s]"
+              />
+
+              {/* Header */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[0.7rem] font-medium uppercase tracking-[0.18em] text-slate-400">
+                <span className="text-cyan-200/90">{role.years}</span>
+                <span aria-hidden="true" className="text-slate-700">
+                  ·
+                </span>
+                <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-2 py-0.5 text-[0.65rem] text-cyan-100">
+                  {role.duration}
+                </span>
+              </div>
+
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                {role.company}
+              </h3>
+              <p className="mt-1.5 text-sm font-medium text-cyan-200 md:text-base">
+                {role.role}
+              </p>
+              <p className="mt-1 text-xs text-slate-500 md:text-sm">{role.period}</p>
+
+              {/* Summary */}
+              <p className="mt-5 text-base italic leading-7 text-slate-400 md:text-lg md:leading-8">
+                {role.summary}
+              </p>
+
+              {/* Bullet details */}
+              <ul className="mt-6 space-y-3.5">
+                {role.details.map((detail) => (
+                  <li
+                    key={detail}
+                    className="grid grid-cols-[auto_1fr] gap-3 text-sm leading-7 text-slate-300 md:text-[0.95rem] md:leading-8"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-3 size-1.5 rounded-full bg-cyan-300/70"
+                    />
+                    <span>
+                      <RichText text={detail} />
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tools */}
+              <div className="mt-9 border-t border-white/5 pt-6">
+                <p className="mb-4 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                  Stack & Tools
+                </p>
+                <div className="flex flex-wrap items-center gap-2.5">
+                  {role.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-medium text-slate-200 transition hover:-translate-y-0.5 hover:border-cyan-300/30 hover:bg-white/[0.07] hover:text-white"
+                    >
+                      <ToolGlyph name={tool} className="size-4" imageSize={16} />
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </FadeIn>
           ))}
         </div>
 
-        <div className="relative mt-14">
-          <div className="pointer-events-none absolute inset-y-0 left-[1.125rem] hidden w-[2px] -translate-x-1/2 rounded-full bg-gradient-to-b from-cyan-300/70 via-purple-300/40 to-transparent md:block lg:left-1/2" />
+        {/* Highlights stat reel */}
+        <div className="mt-24 border-t border-white/10 pt-16 md:mt-28 md:pt-20">
+          <FadeIn>
+            <div className="mb-12 flex flex-col items-center text-center md:mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300/80">
+                Engineering Impact
+              </p>
+              <p className="mt-3 max-w-2xl text-base text-slate-400 md:text-lg">
+                A few measurable outcomes from the work above.
+              </p>
+            </div>
+          </FadeIn>
 
-          {roles.map((role, index) => (
-            <FadeIn
-              key={`${role.company}-${role.period}`}
-              delay={index * 0.08}
-              className={`relative mb-6 md:pl-12 lg:grid lg:grid-cols-2 lg:gap-12 lg:pl-0 ${
-                index % 2 === 0 ? "lg:[&>article]:col-start-1" : "lg:[&>article]:col-start-2"
-              }`}
-            >
-              <div className="absolute left-[1.125rem] top-7 z-10 hidden size-5 -translate-x-1/2 rounded-full border border-cyan-200/70 bg-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.45)] md:block lg:left-1/2" />
-
-              <article
-                tabIndex={0}
-                className="group rounded-[1.75rem] border border-white/10 bg-slate-900/75 p-6 outline-none transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-slate-900/95 focus-visible:-translate-y-1 focus-visible:border-cyan-300/50 focus-visible:ring-2 focus-visible:ring-cyan-300/30"
+          <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-3 lg:gap-x-14">
+            {experienceHighlights.map((highlight, index) => (
+              <FadeIn
+                key={highlight.label}
+                delay={index * 0.04}
+                className="group flex flex-col gap-3 border-l border-white/10 pl-5 transition hover:border-cyan-300/50"
               >
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <h3 className="text-2xl font-semibold tracking-tight text-white">
-                      {role.company}
-                    </h3>
-                    <p className="mt-2 text-sm font-medium text-cyan-200">{role.role}</p>
-                  </div>
-                  <div className="flex flex-wrap gap-2 sm:justify-end">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-slate-300">
-                      <CalendarDays className="size-4 text-purple-200" />
-                      {role.period}
-                    </div>
-                    <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-sm font-medium text-cyan-100">
-                      <Timer className="size-4" />
-                      {role.duration}
-                    </div>
-                  </div>
-                </div>
-
-                <p className="mt-5 leading-8 text-slate-300">{role.summary}</p>
-
-                <div className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-400 transition group-hover:text-cyan-200 group-focus-visible:text-cyan-200">
-                  <ChevronDown className="size-4 transition group-hover:rotate-180 group-focus-visible:rotate-180" />
-                  Hover or focus to reveal details and tools
-                </div>
-
-                <div className="grid max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:mt-6 group-hover:max-h-[42rem] group-hover:opacity-100 group-focus-visible:mt-6 group-focus-visible:max-h-[42rem] group-focus-visible:opacity-100">
-                  <div className="rounded-3xl border border-white/10 bg-slate-950/60 p-5">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
-                      Key Work
-                    </p>
-                    <ul className="space-y-3">
-                      {role.details.map((detail) => (
-                        <li key={detail} className="flex gap-3 text-sm leading-6 text-slate-300">
-                          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-300" />
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-6 border-t border-white/10 pt-5">
-                      <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
-                        <Wrench className="size-4 text-purple-200" />
-                        Tools Used
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {role.tools.map((tool) => (
-                          <span
-                            key={tool}
-                            className="rounded-full border border-cyan-300/15 bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-100"
-                          >
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </FadeIn>
-          ))}
+                <span className="bg-gradient-to-br from-white via-white to-slate-400 bg-clip-text text-4xl font-semibold tracking-tight text-transparent md:text-5xl">
+                  {highlight.value}
+                </span>
+                <span className="text-sm leading-6 text-slate-400 md:text-base md:leading-7">
+                  {highlight.label}
+                </span>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>
