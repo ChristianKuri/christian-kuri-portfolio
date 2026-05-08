@@ -248,11 +248,53 @@ export const roles = [
 ];
 
 export const interests = [
-  "AI tools and automation",
-  "Scalable backend architecture",
-  "Web3 and crypto infrastructure",
-  "Developer productivity",
-  "Content systems",
-  "Gaming and gaming knowledge platforms",
-  "Remote international work",
+  {
+    title: "AI tools & automation",
+    tagline: "LLMs as engineering tools, not magic.",
+    body: "Building agents, prompt orchestration, and quietly automating the boring parts of every workflow.",
+    accent: "purple",
+    signature: "chat",
+  },
+  {
+    title: "Scalable backend architecture",
+    tagline: "Systems that don't fall over at 2am.",
+    body: "Event-driven flows, queues, sharded data, and observability that turns mystery incidents into 5-minute fixes.",
+    accent: "cyan",
+    signature: "graph",
+  },
+  {
+    title: "Web3 & crypto infrastructure",
+    tagline: "EVMs, smart contracts, and trust-minimized systems.",
+    body: "Smart contracts, dApp wiring, and on-chain primitives — the parts of crypto that are actually engineering.",
+    accent: "amber",
+    signature: "hex",
+  },
+  {
+    title: "Developer productivity",
+    tagline: "The 3x lives in the inner loop.",
+    body: "Sharper feedback loops, AI-assisted reviews, scriptable scaffolds, and removing the small frictions that compound.",
+    accent: "emerald",
+    signature: "terminal",
+  },
+  {
+    title: "Content systems",
+    tagline: "Pipelines that turn ideas into posts.",
+    body: "Multi-stage AI workflows that research, summarize, structure, and ship publishable content end-to-end.",
+    accent: "blue",
+    signature: "doc",
+  },
+  {
+    title: "Gaming knowledge platforms",
+    tagline: "Communities, builds, meta — searchable.",
+    body: "Tools and platforms for serious players: structured guides, build databases, and gameplay analytics.",
+    accent: "pink",
+    signature: "controller",
+  },
+  {
+    title: "Remote international work",
+    tagline: "Async, written, and globally distributed.",
+    body: "Working across time zones with strong written communication, deep focus, and reliable delivery.",
+    accent: "orange",
+    signature: "globe",
+  },
 ];
