@@ -10,7 +10,7 @@ import { SkillsSection } from "@/components/skills-section";
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+    <div id="top" className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
       <Navbar />
       <main>
         <HeroSection />
